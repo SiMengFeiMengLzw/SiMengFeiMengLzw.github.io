@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>分布式ID</title>
+      <link href="posts/90055678.html"/>
+      <url>posts/90055678.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>传统单体架构：（它的ID一般都设置为主键自增，AUTO_INCREMENT=1设置自增起始值）</p><p>但是在分布式服务架构（会有多个数据库或者多个表存储相同的业务数据）</p><p>在这种情况下，数据库的自增ID就会出现产生相同ID，破坏了主键的唯一性</p><p>解决思路</p><p>一：从数据库上解决：我们可以在不同的库上的表中设置不同的起始值和步长</p><p>但是要考虑数据库的可用性和服务的容错性</p><p>二：使用算法生成的ID代替主键，比如生成的ID要根据时间戳和机器的ID和序列数等等条件去生成唯一的ID，但是要考虑到时间回拨的问题，还要做缓冲的设计提高性能。</p><p>从数据库方面</p><p>方案一：</p><p>数据库生成ID给每张相同业务的表的主键字段</p><p>设置不同的<code>auto_increment_increment</code>（起始值）和<code>auto_increment_offset</code>（步长）来保证ID自增</p><p>避免出现主键冲突的问题</p><p>方案二：</p><p>redis 使用INCR (Redis Incr 命令将 key 中储存的数字值增一)</p><p>和INCRBY (Redis Incrby 命令将 key 中储存的数字加上指定的增量值。)</p><p>使用算法生成的ID</p><p>UUID</p><p>优点：无网络消耗，方便</p><p>缺点：不容易存储，位数太多，其它应用场景少</p><p>信息不安全（会暴露Mac地址）</p><p>对索引不利</p><p>Snowflake（雪花算法）</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+  
+  
+</search>
