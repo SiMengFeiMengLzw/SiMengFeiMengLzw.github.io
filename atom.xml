@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-02-23T13:03:08.786Z</updated>
+  <updated>2022-02-26T12:46:38.705Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,11 +17,59 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>使用Typora+PicGo配置Gitee图床</title>
+    <link href="http://example.com/posts/35b4fd03.html"/>
+    <id>http://example.com/posts/35b4fd03.html</id>
+    <published>2022-02-26T12:31:00.000Z</published>
+    <updated>2022-02-26T12:46:38.705Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><strong>Typora+PicGo配置Gitee图床</strong></p><p>[(22条消息) 使用Typora+PicGo配置Gitee图床_清菡的博客-CSDN博客](<a href="https://blog.csdn.net/weixin_41033105/article/details/108502494?ops_request_misc=&amp;request_id=&amp;biz_id=102&amp;utm_term=typora">https://blog.csdn.net/weixin_41033105/article/details/108502494?ops_request_misc=&amp;request_id=&amp;biz_id=102&amp;utm_term=typora</a> picgo gitee&amp;utm_medium=distribute.pc_search_result.none-task-blog-2<del>all</del>sobaiduweb~default-3-108502494.pc_search_result_positive&amp;spm=1018.2226.3001.4187)</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla</summary>
+      
+    
+    
+    
+    <category term="笔记" scheme="http://example.com/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="工具" scheme="http://example.com/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>idea文件修改父目录高亮</title>
+    <link href="http://example.com/posts/a9d943e2.html"/>
+    <id>http://example.com/posts/a9d943e2.html</id>
+    <published>2022-02-26T12:12:00.000Z</published>
+    <updated>2022-02-26T12:25:10.063Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><img src="https://gitee.com/thunder-noon-lll/drawing-bed/raw/master/img/image-20220226201531850.png" alt="image-20220226201531850"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla</summary>
+      
+    
+    
+    
+    <category term="idea的使用" scheme="http://example.com/categories/idea%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
+    
+    
+    <category term="工具" scheme="http://example.com/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
+  
+  <entry>
     <title>分布式ID</title>
     <link href="http://example.com/posts/90055678.html"/>
     <id>http://example.com/posts/90055678.html</id>
-    <published>2022-02-23T13:03:06.000Z</published>
-    <updated>2022-02-23T13:03:08.786Z</updated>
+    <published>2022-02-23T13:03:00.000Z</published>
+    <updated>2022-02-26T12:11:16.081Z</updated>
     
     <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>传统单体架构：（它的ID一般都设置为主键自增，AUTO_INCREMENT=1设置自增起始值）</p><p>但是在分布式服务架构（会有多个数据库或者多个表存储相同的业务数据）</p><p>在这种情况下，数据库的自增ID就会出现产生相同ID，破坏了主键的唯一性</p><p>解决思路</p><p>一：从数据库上解决：我们可以在不同的库上的表中设置不同的起始值和步长</p><p>但是要考虑数据库的可用性和服务的容错性</p><p>二：使用算法生成的ID代替主键，比如生成的ID要根据时间戳和机器的ID和序列数等等条件去生成唯一的ID，但是要考虑到时间回拨的问题，还要做缓冲的设计提高性能。</p><p>从数据库方面</p><p>方案一：</p><p>数据库生成ID给每张相同业务的表的主键字段</p><p>设置不同的<code>auto_increment_increment</code>（起始值）和<code>auto_increment_offset</code>（步长）来保证ID自增</p><p>避免出现主键冲突的问题</p><p>方案二：</p><p>redis 使用INCR (Redis Incr 命令将 key 中储存的数字值增一)</p><p>和INCRBY (Redis Incrby 命令将 key 中储存的数字加上指定的增量值。)</p><p>使用算法生成的ID</p><p>UUID</p><p>优点：无网络消耗，方便</p><p>缺点：不容易存储，位数太多，其它应用场景少</p><p>信息不安全（会暴露Mac地址）</p><p>对索引不利</p><p>Snowflake（雪花算法）</p>]]></content>
     
@@ -33,6 +81,10 @@
     
     
     
+    <category term="学习" scheme="http://example.com/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="分布式" scheme="http://example.com/tags/%E5%88%86%E5%B8%83%E5%BC%8F/"/>
     
   </entry>
   

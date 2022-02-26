@@ -40,9 +40,9 @@
       s.parentNode.insertBefore(hm, s);
     })();
     </script>
-<meta name="generator" content="Hexo 5.2.0">
+<meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="lzw" type="application/atom+xml">
+
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="lzw" type="application/atom+xml">
 </head>
 
 
@@ -87,15 +87,6 @@
       <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
     </a>
     <ul class="sub-nav menus_item_child ">
-      
-      <li>
-        <a href="/census">
-          
-          <i class="fas fa-layer-group" style="margin-top: -20px; zoom: 0.6;"></i>
-          
-          <span>统计</span>
-        </a>
-      </li>
       
       <li>
         <a href="/archives">
@@ -240,16 +231,6 @@
 			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
 		</a>
             <ul  style="background:  ;" >
-              
-                <li>
-
-                  <a href="/census " style="margin-left:75px">
-				  
-				   <i class="fa fas fa-layer-group" style="position: absolute;left:50px" ></i>
-			      
-		          <span>统计</span>
-                  </a>
-                </li>
               
                 <li>
 
@@ -481,7 +462,58 @@
             </div>
             <div class="tag-chips">
                 
-                你目前还没有对文章进行分类.
+                
+                
+                <a href="/categories/idea%E7%9A%84%E4%BD%BF%E7%94%A8/" title="idea的使用: 1">
+                  <div class="moleskine-wrapper">
+                      <div class="moleskine-notebook">
+                          <div class="chip notebook-cover center-align waves-effect waves-light
+                           chip-default "
+                                  style="background-color: #E8BC9D;">                                               
+                              <div class="notebook-skin
+                                   chip-default "
+                                  >idea的使用                                  
+                              </div>
+                          </div>
+                          <div class="notebook-page dotted"></div>
+                      </div>
+                  </div>
+                </a>
+                
+                
+                <a href="/categories/%E7%AC%94%E8%AE%B0/" title="笔记: 1">
+                  <div class="moleskine-wrapper">
+                      <div class="moleskine-notebook">
+                          <div class="chip notebook-cover center-align waves-effect waves-light
+                           chip-default "
+                                  style="background-color: #E6B862;">                                               
+                              <div class="notebook-skin
+                                   chip-default "
+                                  >笔记                                  
+                              </div>
+                          </div>
+                          <div class="notebook-page dotted"></div>
+                      </div>
+                  </div>
+                </a>
+                
+                
+                <a href="/categories/%E5%AD%A6%E4%B9%A0/" title="学习: 1">
+                  <div class="moleskine-wrapper">
+                      <div class="moleskine-notebook">
+                          <div class="chip notebook-cover center-align waves-effect waves-light
+                           chip-default "
+                                  style="background-color: #CD1A03;">                                               
+                              <div class="notebook-skin
+                                   chip-default "
+                                  >学习                                  
+                              </div>
+                          </div>
+                          <div class="notebook-page dotted"></div>
+                      </div>
+                  </div>
+                </a>
+                
                 
             </div>
         </div>
@@ -599,6 +631,63 @@
     </style>
 
     
+    <style type="text/css">
+    #category-radar {
+        width: 100%;
+        height: 360px;
+    }
+</style>
+
+<div class="container" data-aos="fade-up">
+    <div class="card">
+        <div id="category-radar" class="card-content"></div>
+    </div>
+</div>
+
+<script type="text/javascript" src="/libs/echarts/echarts.min.js"></script>
+<script type="text/javascript">
+    let radarChart = echarts.init(document.getElementById('category-radar'));
+
+    
+
+    let option = {
+        title: {
+            left: 'center',
+            text: '文章分类雷达图',
+            textStyle: {
+                fontWeight: 500,
+                fontSize: 22
+            }
+        },
+        tooltip: {},
+        radar: {
+            name: {
+                textStyle: {
+                    color: '#3C4858'
+                }
+            },
+            indicator: [{"name":"idea的使用","max":2},{"name":"笔记","max":2},{"name":"学习","max":2}],
+            nameGap: 5,
+            center: ['50%','55%'],
+            radius: '66%'
+        },
+        series: [{
+            type: 'radar',
+            color: ['#3ecf8e'],
+            itemStyle: {normal: {areaStyle: {type: 'default'}}},
+            data : [
+                {
+                    value : [1,1,1],
+                    name : '文章分类数量'
+                }
+            ]
+        }]
+    };
+
+    radarChart.setOption(option);
+</script>
+
+    
 
 </main>
 
@@ -672,7 +761,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">372</span>&nbsp;字
+                class="white-color">435</span>&nbsp;字
             
             
             
