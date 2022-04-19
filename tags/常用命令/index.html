@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="听听音乐, lzw java">
+    <meta name="keywords" content="标签: 常用命令, lzw java">
     <meta name="description" content="大专 | 软件技术 ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>听听音乐 | lzw</title>
+    <title>标签: 常用命令 | lzw</title>
 
     <link rel="icon" type="image/jpeg" href="https://s1.ax1x.com/2020/05/17/YR20js.jpg">
 
@@ -408,14 +408,7 @@
 
 </header>
 
-    <style type="text/css">
-    /* don't remove. */
-    .about-cover {
-        height: 75vh;
-    }
-</style>
-
-<div class="bg-cover pd-header about-cover">
+    <div class="bg-cover pd-header about-cover">
     <div class="container">
     <div class="row">
     <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
@@ -458,118 +451,137 @@
 </div>
 
 <main class="content">
-    <div id="aboutme" class="container about-container">
-        <div class="card">
-            <div class="card-content">
-                <div class="music-player">
-                    
-                        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
-<style>
-    .aplayer .aplayer-lrc p {
-        
-        font-size: 12px;
-        font-weight: 700;
-        line-height: 16px !important;
-    }
-
-    .aplayer .aplayer-lrc p.aplayer-lrc-current {
-        
-        font-size: 15px;
-        color: #42b983;
-    }
 
     
-</style>
-<div class="music-player">
-    
-        <div class="title center-align">
-            <i class="fa fa-music"></i>&nbsp;&nbsp;听听音乐
-        </div>
-    
-    <div class="row">
-        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
-                   server="tencent"
-                   type="playlist"
-                   id="2852512831"
-                   fixed='false'
-                   autoplay='true'
-                   theme='#42b983'
-                   loop='all'
-                   order='random'
-                   preload='auto'
-                   volume='0.7'
-                   listMaxHeight='525px'
-                   list-folded='false'
-        >
-        </meting-js>
-    </div>
-</div>
 
-
-<script src="/libs/aplayer/APlayer.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
-
-
-
-                        <style>
-                        .bubbles > .particle {
-                            /*初始透明度为0*/
-                            opacity: 0;
-                            position: absolute;
-                            /*初始颜色为荧光色，透明度为0.7*/
-                            background-color: rgba(128,255,0,0.7);
-                            /*使用bubbles动画，持续时间18秒，缓慢进入，无限循环*/
-                            animation: bubbles 18s ease-in infinite;
-                            border-radius: 100%;
-                        }
-                        /*css keyframes 动画*/
-                        @keyframes bubbles {
-                            0% {
-                                opacity: 0;
-                            }
-                            5% {
-                                opacity: 1;
-                                transform: translate(0, -20%);
-                            }
-                            /*这里-8000%表示是气泡的8000%*/
-                            100% {
-                                opacity: 0;
-                                transform: translate(0, -8000%);
-                            }
-                        }
-                        </style>
-                        <!-- 这里让元素宽度100%（和页面等宽） -->
-                        <div style="width: 100%; height: 100%; position: relative; bottom: 0px;" class="particletext bubbles">
-
-
-
-                        </div>
-                        <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-                        <script>
-                          function bubbles() {
-                             $.each($(".particletext.bubbles"), function(){
-                                var bubblecount = ($(this).width()/50)*10;
-                                for(var i = 0; i <= bubblecount; i++) {
-                                   var size = ($.rnd(40,80)/10);
-                                   //这里的animation-delay很重要，关系到你的特效是否看上去是连续无断层的，上一步中css是18秒，所以这一步中延迟时间就设置成$.rnd(0,180)/10)
-                                   $(this).append('<span class="particle" style="top:' + $.rnd(20,80) + '%; left:' + $.rnd(0,95) + '%;width:' + size + 'px; height:' + size + 'px;animation-delay: ' + ($.rnd(0,180)/10) + 's;"></span>');
-                                }
-                             });
-                          }
-                          jQuery.rnd = function(m,n) {
-                              m = parseInt(m);
-                              n = parseInt(n);
-                              return Math.floor( Math.random() * (n - m + 1) ) + m;
-                          }
-                          bubbles();
-                        </script>
-                        
-                    
-                </div>
+<div id="tags" class="container chip-container">
+    <div class="card">
+        <div class="card-content">
+            <div class="tag-title center-align">
+                <i class="fas fa-tags"></i>&nbsp;&nbsp;文章标签
+            </div>
+            <div class="tag-chips">
+                
+                
+                <a href="/tags/%E5%B7%A5%E5%85%B7/" title="工具: 2">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="工具" style="background-color: #F9EBEA;">工具
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" title="数据库: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="数据库" style="background-color: #F5EEF8;">数据库
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/mysql/" title="mysql: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="mysql" style="background-color: #D5F5E3;">mysql
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/springboot%E9%9B%86%E6%88%90mybatis/" title="springboot集成mybatis: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="springboot集成mybatis" style="background-color: #E8F8F5;">springboot集成mybatis
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F/" title="分布式: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="分布式" style="background-color: #FEF9E7;">分布式
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" title="常用命令: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-active "
+                            data-tagname="常用命令" style="background-color: #F8F9F9;">常用命令
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E7%B4%A2%E5%BC%95/" title="索引: 2">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="索引" style="background-color: #82E0AA;">索引
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/blog/" title="blog: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="blog" style="background-color: #D7BDE2;">blog
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
             </div>
         </div>
     </div>
+</div>
+
+    
+
+    <article id="articles" class="container articles">
+        <div class="row tags-posts">
+            
+            
+            <div class="article tag-post col s12 m6 l4" data-tags="常用命令" data-aos="fade-up">
+                <div class="card">
+                    <a href="/posts/157c05f5.html">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed@master/posts/20200928014319.jpg" class="responsive-img" alt="数据库常用命令">
+                            
+                            <span class="card-title">数据库常用命令</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-28
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/mysql/" class="post-category">
+                                mysql
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </article>
 </main>
+
+
+
 
     <footer class="page-footer bg-color">
     
