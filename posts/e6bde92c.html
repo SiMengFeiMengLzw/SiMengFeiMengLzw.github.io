@@ -425,7 +425,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://github.com/SiMengFeiMengLzw/img/tree/master/posts/20200928012804.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://raw.githubusercontent.com/SiMengFeiMengLzw/img/tree/master/posts/20200928012804.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -583,7 +583,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-06-06
+                    2022-06-11
                 </div>
                 
 
@@ -745,7 +745,7 @@
 <span class="token comment">#清空内存表数据</span>
 <span class="token keyword">delete</span> <span class="token keyword">from</span> test_user_memory<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>先简单测试一下插入内存表一万条数据要花多少时间<br><img src="https://gitee.com/thunder-noon-lll/drawing-bed/raw/master/img/640" alt="图片"><br>把内存表的一万条数据一次性插入普通表，只需要很短的时间就完成了，如下图所示<br><img src="https://gitee.com/thunder-noon-lll/drawing-bed/raw/master/img/image-20220307200605048.png" alt="image-20220307200605048"><br>查询刚刚插入的普通表的数据<br><img src="https://gitee.com/thunder-noon-lll/drawing-bed/raw/master/img/image-20220307200624452.png" alt="image-20220307200624452"><br>因为我没有更改数据库内存表内存大小，所以单次插入内存表一万条数据是没问题的，但是单次插入内存表十万条数据就不行了，会报内存表已满的异常。如下图所示<br><img src="https://gitee.com/thunder-noon-lll/drawing-bed/raw/master/img/image-20220307200638920.png" alt="image-20220307200638920"></p>
+<p>先简单测试一下插入内存表一万条数据要花多少时间<br><img src="https://raw.githubusercontent.com/SiMengFeiMengLzw/drawing/tree/master/img/640" alt="图片"><br>把内存表的一万条数据一次性插入普通表，只需要很短的时间就完成了，如下图所示<br><img src="https://raw.githubusercontent.com/SiMengFeiMengLzw/drawing/tree/master/img/image-20220307200605048.png" alt="image-20220307200605048"><br>查询刚刚插入的普通表的数据<br><img src="https://raw.githubusercontent.com/SiMengFeiMengLzw/drawing/tree/master/img/image-20220307200624452.png" alt="image-20220307200624452"><br>因为我没有更改数据库内存表内存大小，所以单次插入内存表一万条数据是没问题的，但是单次插入内存表十万条数据就不行了，会报内存表已满的异常。如下图所示<br><img src="https://raw.githubusercontent.com/SiMengFeiMengLzw/drawing/tree/master/img/image-20220307200638920.png" alt="image-20220307200638920"></p>
 <p>如果想调用一次存储过程插入普通表十万或百万的数据要如何实现呢？这里有两种方案</p>
 <h3 id="修改mysql内存表存储大小的值"><a href="#修改mysql内存表存储大小的值" class="headerlink" title="修改mysql内存表存储大小的值"></a><strong>修改mysql内存表存储大小的值</strong></h3><p>1、通过执行mysql命令修改</p>
 <blockquote>
@@ -756,15 +756,15 @@
 <p>vi /etc/my.cnf<br>[mysqld]<br>max_heap_table_size = 2048M<br>tmp_table_size = 2048M</p>
 </blockquote>
 <p>可以通过下面的方式查看内存表存储大小</p>
-<p><img src="https://gitee.com/thunder-noon-lll/drawing-bed/raw/master/img/image-20220307200655732.png" alt="image-20220307200655732"></p>
+<p><img src="https://raw.githubusercontent.com/SiMengFeiMengLzw/drawing/tree/master/img/image-20220307200655732.png" alt="image-20220307200655732"></p>
 <h3 id="二、调用另一个存储过程"><a href="#二、调用另一个存储过程" class="headerlink" title="二、调用另一个存储过程"></a><strong>二、调用另一个存储过程</strong></h3><p><strong>add_test_user_memory_to_outside</strong></p>
 <p>这个存储过程就是通过不断循环插入内存表，再从内存表获取数据插入普通表，最后删除内存表，以此循环直至循环结束。</p>
 <pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token comment">#循环100次，每次生成10000条数据 总共生成一百万条数据</span>
 <span class="token keyword">CALL</span> add_test_user_memory_to_outside<span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">,</span><span class="token number">10000</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<p><img src="https://gitee.com/thunder-noon-lll/drawing-bed/raw/master/img/image-20220307200708438.png" alt="image-20220307200708438"></p>
+<p><img src="https://raw.githubusercontent.com/SiMengFeiMengLzw/drawing/tree/master/img/image-20220307200708438.png" alt="image-20220307200708438"></p>
 <p>一百万数据</p>
-<p><img src="https://gitee.com/thunder-noon-lll/drawing-bed/raw/master/img/image-20220307200719612.png" alt="image-20220307200719612"></p>
+<p><img src="https://raw.githubusercontent.com/SiMengFeiMengLzw/drawing/tree/master/img/image-20220307200719612.png" alt="image-20220307200719612"></p>
 <h3 id="三、创建存储过程中遇见问题"><a href="#三、创建存储过程中遇见问题" class="headerlink" title="三、创建存储过程中遇见问题"></a><strong>三、创建存储过程中遇见问题</strong></h3><pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">[Err] 1418 - This function has none of DETERMINISTIC, NO SQL, or READS SQL DATA in its declaration and binary logging is enabled (you *might* want to use the less safe log_bin_trust_function_creators variable)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>解决方法<br>1.在mysql数据库中执行以下语句 （临时生效，重启后失效）</p>
@@ -776,10 +776,10 @@
 <ol start="2">
 <li>在配置文件/etc/my.cnf的[mysqld]或者my-default.ini文件中配置log_bin_trust_function_creators=1</li>
 </ol>
-<img src="https://gitee.com/thunder-noon-lll/drawing-bed/raw/master/img/image-20220307201714290.png" alt="image-20220307201714290" style="zoom:50%;">
+<img src="https://raw.githubusercontent.com/SiMengFeiMengLzw/drawing/tree/master/img/image-20220307201714290.png" alt="image-20220307201714290" style="zoom:50%;">
 
 <p>3.创建时添加红色的文字部分</p>
-<img src="https://gitee.com/thunder-noon-lll/drawing-bed/raw/master/img/image-20220307201740225.png" alt="image-20220307201740225" style="zoom:50%;">
+<img src="https://raw.githubusercontent.com/SiMengFeiMengLzw/drawing/tree/master/img/image-20220307201740225.png" alt="image-20220307201740225" style="zoom:50%;">
                 
             </div>
             <hr/>
@@ -1324,7 +1324,7 @@ new Valine({
                     <div class="card-image">
                         
                         
-                        <img src="https://github.com/SiMengFeiMengLzw/img/tree/master/posts/20200928013951.jpg" class="responsive-img" alt="索引失效- like条件 左边有% 导致索引失效">
+                        <img src="https://raw.githubusercontent.com/SiMengFeiMengLzw/img/tree/master/posts/20200928013951.jpg" class="responsive-img" alt="索引失效- like条件 左边有% 导致索引失效">
                         
                         <span class="card-title">索引失效- like条件 左边有% 导致索引失效</span>
                     </div>
@@ -1373,7 +1373,7 @@ new Valine({
                     <div class="card-image">
                         
                         
-                        <img src="https://github.com/SiMengFeiMengLzw/img/tree/master/posts/20200928021245.jpg" class="responsive-img" alt="索引">
+                        <img src="https://raw.githubusercontent.com/SiMengFeiMengLzw/img/tree/master/posts/20200928021245.jpg" class="responsive-img" alt="索引">
                         
                         <span class="card-title">索引</span>
                     </div>
