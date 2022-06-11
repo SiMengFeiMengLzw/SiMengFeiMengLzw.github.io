@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://example.com/posts/1597783f.html</loc>
-    <lastmod>2022-06-11</lastmod>
-  </url>
-  <url>
-    <loc>http://example.com/posts/a7b038eb.html</loc>
-    <lastmod>2022-06-11</lastmod>
-  </url>
-  <url>
     <loc>http://example.com/posts/a9d943e2.html</loc>
     <lastmod>2022-06-11</lastmod>
   </url>
   <url>
+    <loc>http://example.com/posts/1597783f.html</loc>
+    <lastmod>2022-06-11</lastmod>
+  </url>
+  <url>
     <loc>http://example.com/posts/e6bde92c.html</loc>
+    <lastmod>2022-06-11</lastmod>
+  </url>
+  <url>
+    <loc>http://example.com/posts/a7b038eb.html</loc>
     <lastmod>2022-06-11</lastmod>
   </url>
   <url>

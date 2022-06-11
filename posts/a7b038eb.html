@@ -617,9 +617,9 @@
             <div id="articleContent">
                 <p>LIKE 语句不允许使用 % 开头，否则索引会失效；</p>
 <p>当真的需要两边都使用%来模糊查询时，<br>当这个作为模糊查询的条件字段（例子中的name）以及所想要查询出来的数据字段（例子中的 id &amp; name）都有索引列时，才能真正使用索引，否则，索引失效全表扫描（比如多了一个 salary 字段）</p>
-<img src="https://raw.githubusercontent.com/SiMengFeiMengLzw/drawing/tree/master/img/image-20220308003059037.png" alt="image-20220308003059037" style="zoom:50%;">
+<img src="https://raw.githubusercontent.com/SiMengFeiMengLzw/drawing/master/img/image-20220308003059037.png" alt="image-20220308003059037" style="zoom:50%;">
 
-<img src="https://raw.githubusercontent.com/SiMengFeiMengLzw/drawing/tree/master/img/image-20220308003350612.png" alt="image-20220308003350612" style="zoom:50%;">
+<img src="https://raw.githubusercontent.com/SiMengFeiMengLzw/drawing/master/img/image-20220308003350612.png" alt="image-20220308003350612" style="zoom:50%;">
                 
             </div>
             <hr/>
