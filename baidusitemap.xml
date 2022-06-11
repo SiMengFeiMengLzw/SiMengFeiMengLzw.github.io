@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://example.com/posts/35b4fd03.html</loc>
+    <lastmod>2022-06-11</lastmod>
+  </url>
+  <url>
+    <loc>http://example.com/posts/884e5e.html</loc>
+    <lastmod>2022-06-11</lastmod>
+  </url>
+  <url>
+    <loc>http://example.com/posts/7f59c40c.html</loc>
+    <lastmod>2022-06-11</lastmod>
+  </url>
+  <url>
     <loc>http://example.com/posts/a9d943e2.html</loc>
     <lastmod>2022-06-11</lastmod>
   </url>
@@ -15,10 +27,6 @@
   <url>
     <loc>http://example.com/posts/a7b038eb.html</loc>
     <lastmod>2022-06-11</lastmod>
-  </url>
-  <url>
-    <loc>http://example.com/posts/884e5e.html</loc>
-    <lastmod>2022-06-06</lastmod>
   </url>
   <url>
     <loc>http://example.com/posts/df9a61f7.html</loc>
@@ -38,10 +46,6 @@
   </url>
   <url>
     <loc>http://example.com/posts/90055678.html</loc>
-    <lastmod>2022-06-06</lastmod>
-  </url>
-  <url>
-    <loc>http://example.com/posts/35b4fd03.html</loc>
     <lastmod>2022-06-06</lastmod>
   </url>
   <url>
