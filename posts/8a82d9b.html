@@ -590,7 +590,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    619
+                    630
                 </div>
                 
 
@@ -690,11 +690,13 @@ http<span class="token operator">:</span><span class="token operator">/</span><s
 <span class="token keyword">order</span> <span class="token keyword">by</span> service_name<span class="token punctuation">,</span> send_type<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h2 id="在线评价详情"><a href="#在线评价详情" class="headerlink" title="在线评价详情"></a>在线评价详情</h2><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">select</span> 
-  t<span class="token punctuation">.</span>service_name 代理<span class="token punctuation">,</span>
+   t<span class="token punctuation">.</span>service_name 代理<span class="token punctuation">,</span>
 	t<span class="token punctuation">.</span>ticket_code 工单号<span class="token punctuation">,</span>
-  <span class="token keyword">case</span> t<span class="token punctuation">.</span>send_type <span class="token keyword">when</span> <span class="token number">1</span> <span class="token keyword">then</span> <span class="token string">'用户送修'</span> <span class="token keyword">when</span> <span class="token number">2</span> <span class="token keyword">then</span> <span class="token string">'经销商送修'</span> <span class="token keyword">when</span> <span class="token number">4</span> <span class="token keyword">then</span> <span class="token string">'寄修'</span> <span class="token keyword">else</span> <span class="token string">''</span> <span class="token keyword">end</span> 送修类型<span class="token punctuation">,</span>
+   <span class="token keyword">case</span> t<span class="token punctuation">.</span>send_type <span class="token keyword">when</span> <span class="token number">1</span> <span class="token keyword">then</span> <span class="token string">'用户送修'</span> <span class="token keyword">when</span> <span class="token number">2</span> <span class="token keyword">then</span> <span class="token string">'经销商送修'</span> <span class="token keyword">when</span> <span class="token number">4</span> <span class="token keyword">then</span> <span class="token string">'寄修'</span> <span class="token keyword">else</span> <span class="token string">''</span> <span class="token keyword">end</span> 送修类型<span class="token punctuation">,</span>
 	<span class="token keyword">case</span> t<span class="token punctuation">.</span>send_type <span class="token keyword">when</span> <span class="token number">1</span> <span class="token keyword">then</span> c<span class="token punctuation">.</span>user_openid <span class="token keyword">when</span> <span class="token number">2</span> <span class="token keyword">then</span> shop<span class="token punctuation">.</span>user_openid <span class="token keyword">when</span> <span class="token number">4</span> <span class="token keyword">then</span> express<span class="token punctuation">.</span>user_openid <span class="token keyword">else</span> <span class="token string">''</span> <span class="token keyword">end</span> 微信id<span class="token punctuation">,</span>
-  t<span class="token punctuation">.</span>shop_id 经销商id<span class="token punctuation">,</span>
+	t<span class="token punctuation">.</span>site_code 网点id<span class="token punctuation">,</span>
+	t<span class="token punctuation">.</span>site_name 网点名称<span class="token punctuation">,</span>
+   t<span class="token punctuation">.</span>shop_id 经销商id<span class="token punctuation">,</span>
 	t<span class="token punctuation">.</span>shop_name 经销商名称<span class="token punctuation">,</span>
 	t<span class="token punctuation">.</span>factory 厂别<span class="token punctuation">,</span>
 	t<span class="token punctuation">.</span>solution 解决方法<span class="token punctuation">,</span>
@@ -719,7 +721,7 @@ http<span class="token operator">:</span><span class="token operator">/</span><s
 <span class="token keyword">on</span> t<span class="token punctuation">.</span>ticket_code <span class="token operator">=</span> express<span class="token punctuation">.</span>ticket_code
 <span class="token keyword">where</span> t<span class="token punctuation">.</span>is_deleted <span class="token operator">=</span> <span class="token number">0</span> <span class="token operator">and</span> t<span class="token punctuation">.</span>is_push_questionnaire <span class="token operator">=</span> <span class="token number">1</span>  
 <span class="token operator">and</span> submit_time <span class="token operator">BETWEEN</span> <span class="token string">'2022-05-01 00:00:00'</span> <span class="token operator">and</span> <span class="token string">'2022-05-31 23:59:59'</span>
-<span class="token keyword">order</span> <span class="token keyword">by</span> t<span class="token punctuation">.</span>service_name<span class="token punctuation">,</span> t<span class="token punctuation">.</span>send_type<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token keyword">order</span> <span class="token keyword">by</span> t<span class="token punctuation">.</span>service_name<span class="token punctuation">,</span> t<span class="token punctuation">.</span>send_type<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
                 
             </div>
             <hr/>
@@ -1584,7 +1586,7 @@ new Valine({
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">7.1k</span>&nbsp;字
+                class="white-color">7.2k</span>&nbsp;字
             
             
             
