@@ -590,7 +590,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    630
+                    790
                 </div>
                 
 
@@ -617,6 +617,20 @@
             <div id="articleContent">
                 <h1 id="java"><a href="#java" class="headerlink" title="java"></a>java</h1><pre class="line-numbers language-java" data-language="java"><code class="language-java"> java
 <span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span>
+转化大小写
+<span class="token class-name">IntelliJ</span> IDEA提供了<span class="token class-name">CamelCase</span>很方便的工具插件，使用快捷键shift<span class="token operator">+</span>alt<span class="token operator">+</span>u。
+
+按住shift<span class="token operator">+</span>alt再不停的按<span class="token class-name">U</span><span class="token punctuation">,</span>会把选中内容的单词的下划线转驼峰转大写等，不停的转换，直到你想要的。
+
+<span class="token class-name">CamelCase</span>插件：
+
+<span class="token number">1.</span>安装方法：
+
+idea菜单栏<span class="token operator">-</span>file<span class="token operator">-</span>settings<span class="token operator">-</span>搜索<span class="token string">"plugins"</span><span class="token operator">-</span>点击下面按钮‘browse repositories‘<span class="token operator">-</span>搜索“<span class="token class-name">CamelCase</span>”<span class="token operator">-</span>点击安装
+
+<span class="token number">2.</span>使用方法
+
+安装后重新打开idea<span class="token punctuation">,</span>选中内容，快捷键shit<span class="token operator">+</span>alt<span class="token operator">+</span>u，选中内容中的单词 就会变，直到变成你想要的。
 分支前缀
 bugfix<span class="token operator">-</span>      feature<span class="token operator">-</span>    commit<span class="token operator">-</span>
 
@@ -624,7 +638,7 @@ bugfix<span class="token operator">-</span>      feature<span class="token opera
 url<span class="token punctuation">.</span>full <span class="token operator">:</span> <span class="token operator">*</span>material<span class="token operator">-</span>transfer<span class="token operator">*</span> and http<span class="token punctuation">.</span>request<span class="token punctuation">.</span>method <span class="token operator">:</span> POST
 
 本地swagger默认地址
-http<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>localhost<span class="token operator">:</span><span class="token number">8080</span><span class="token operator">/</span>swagger<span class="token operator">-</span>ui<span class="token punctuation">.</span>html<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+http<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>localhost<span class="token operator">:</span><span class="token number">8080</span><span class="token operator">/</span>swagger<span class="token operator">-</span>ui<span class="token punctuation">.</span>html<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h1 id="hive-使用sql查询需加-sql"><a href="#hive-使用sql查询需加-sql" class="headerlink" title="hive(使用sql查询需加%sql)"></a>hive(使用sql查询需加%sql)</h1><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">查看hive建表语句：<span class="token keyword">show</span> <span class="token keyword">create</span> <span class="token keyword">table</span> tablename<span class="token punctuation">;</span> 				
 
@@ -644,6 +658,9 @@ http<span class="token operator">:</span><span class="token operator">/</span><s
 新增字段
 
 <span class="token keyword">alter</span> <span class="token keyword">table</span> 表名 <span class="token keyword">add</span> <span class="token keyword">columns</span><span class="token punctuation">(</span>字段名 数据类型<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="比较两表差异"><a href="#比较两表差异" class="headerlink" title="比较两表差异"></a>比较两表差异</h2><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">SELECT</span> trim<span class="token punctuation">(</span>sn<span class="token punctuation">)</span> <span class="token keyword">as</span> sn <span class="token keyword">FROM</span> bbksale_origin<span class="token punctuation">.</span>t_imeiinfo_make_all_bak
+<span class="token keyword">EXCEPT</span>
+<span class="token keyword">SELECT</span> sn <span class="token keyword">FROM</span>  bbksale_origin<span class="token punctuation">.</span>t_imeiinfo_make_all <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <h1 id="sql"><a href="#sql" class="headerlink" title="sql"></a>sql</h1><h2 id="海外机型总激活"><a href="#海外机型总激活" class="headerlink" title="海外机型总激活"></a>海外机型总激活</h2><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">海外机型总激活<span class="token comment">-------------------------------------------------------</span>
 <span class="token keyword">SELECT</span>  product<span class="token punctuation">.</span>title<span class="token punctuation">,</span>agent<span class="token punctuation">.</span>agentname<span class="token punctuation">,</span><span class="token function">count</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
@@ -1586,7 +1603,7 @@ new Valine({
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">7.2k</span>&nbsp;字
+                class="white-color">7.3k</span>&nbsp;字
             
             
             
