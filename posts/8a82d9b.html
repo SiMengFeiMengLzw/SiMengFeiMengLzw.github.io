@@ -590,7 +590,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    601
+                    619
                 </div>
                 
 
@@ -694,11 +694,14 @@ http<span class="token operator">:</span><span class="token operator">/</span><s
 	t<span class="token punctuation">.</span>ticket_code 工单号<span class="token punctuation">,</span>
   <span class="token keyword">case</span> t<span class="token punctuation">.</span>send_type <span class="token keyword">when</span> <span class="token number">1</span> <span class="token keyword">then</span> <span class="token string">'用户送修'</span> <span class="token keyword">when</span> <span class="token number">2</span> <span class="token keyword">then</span> <span class="token string">'经销商送修'</span> <span class="token keyword">when</span> <span class="token number">4</span> <span class="token keyword">then</span> <span class="token string">'寄修'</span> <span class="token keyword">else</span> <span class="token string">''</span> <span class="token keyword">end</span> 送修类型<span class="token punctuation">,</span>
 	<span class="token keyword">case</span> t<span class="token punctuation">.</span>send_type <span class="token keyword">when</span> <span class="token number">1</span> <span class="token keyword">then</span> c<span class="token punctuation">.</span>user_openid <span class="token keyword">when</span> <span class="token number">2</span> <span class="token keyword">then</span> shop<span class="token punctuation">.</span>user_openid <span class="token keyword">when</span> <span class="token number">4</span> <span class="token keyword">then</span> express<span class="token punctuation">.</span>user_openid <span class="token keyword">else</span> <span class="token string">''</span> <span class="token keyword">end</span> 微信id<span class="token punctuation">,</span>
-  t<span class="token punctuation">.</span>site_code 经销商id<span class="token punctuation">,</span>
-	t<span class="token punctuation">.</span>site_name 经销商名称<span class="token punctuation">,</span>
+  t<span class="token punctuation">.</span>shop_id 经销商id<span class="token punctuation">,</span>
+	t<span class="token punctuation">.</span>shop_name 经销商名称<span class="token punctuation">,</span>
 	t<span class="token punctuation">.</span>factory 厂别<span class="token punctuation">,</span>
 	t<span class="token punctuation">.</span>solution 解决方法<span class="token punctuation">,</span>
 	e<span class="token punctuation">.</span>update_time 评价时间<span class="token punctuation">,</span>
+	e<span class="token punctuation">.</span>service_score 服务分数<span class="token punctuation">,</span>
+	e<span class="token punctuation">.</span>environment_score 环境分数<span class="token punctuation">,</span>
+	e<span class="token punctuation">.</span>suggestions 用户建议<span class="token punctuation">,</span>
 	e<span class="token punctuation">.</span>evaluation_data  <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token string">'$.questions[*].values'</span> 评价内容<span class="token punctuation">,</span>
 	m<span class="token punctuation">.</span>material_code 物料代码<span class="token punctuation">,</span>
 	m<span class="token punctuation">.</span>material_name 物料名称<span class="token punctuation">,</span>
@@ -716,7 +719,7 @@ http<span class="token operator">:</span><span class="token operator">/</span><s
 <span class="token keyword">on</span> t<span class="token punctuation">.</span>ticket_code <span class="token operator">=</span> express<span class="token punctuation">.</span>ticket_code
 <span class="token keyword">where</span> t<span class="token punctuation">.</span>is_deleted <span class="token operator">=</span> <span class="token number">0</span> <span class="token operator">and</span> t<span class="token punctuation">.</span>is_push_questionnaire <span class="token operator">=</span> <span class="token number">1</span>  
 <span class="token operator">and</span> submit_time <span class="token operator">BETWEEN</span> <span class="token string">'2022-05-01 00:00:00'</span> <span class="token operator">and</span> <span class="token string">'2022-05-31 23:59:59'</span>
-<span class="token keyword">order</span> <span class="token keyword">by</span> t<span class="token punctuation">.</span>service_name<span class="token punctuation">,</span> t<span class="token punctuation">.</span>send_type<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token keyword">order</span> <span class="token keyword">by</span> t<span class="token punctuation">.</span>service_name<span class="token punctuation">,</span> t<span class="token punctuation">.</span>send_type<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
                 
             </div>
             <hr/>
