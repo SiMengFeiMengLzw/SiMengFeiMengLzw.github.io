@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="数据库常用命令, lzw java">
+    <meta name="keywords" content="常用命令, lzw java">
     <meta name="description" content="大专 | 软件技术 ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>数据库常用命令 | lzw</title>
+    <title>常用命令 | lzw</title>
 
     <link rel="icon" type="image/jpeg" href="https://s1.ax1x.com/2020/05/17/YR20js.jpg">
 
@@ -425,12 +425,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://raw.githubusercontent.com/SiMengFeiMengLzw/img/master/posts/20200928014319.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://raw.githubusercontent.com/SiMengFeiMengLzw/img/master/posts/20200928021129.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">数据库常用命令</h1>
+                    <h1 class="description center-align post-title">常用命令</h1>
                 </div>
             </div>
         </div>
@@ -583,14 +583,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-06-06
+                    2023-01-12
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    180
+                    369
                 </div>
                 
 
@@ -615,7 +615,10 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">查看数据库列表
+                <h3 id="mysql常用命令"><a href="#mysql常用命令" class="headerlink" title="mysql常用命令"></a>mysql常用命令</h3><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">时区配置
+?serverTimezone<span class="token operator">=</span>UTC<span class="token operator">&amp;</span>useUnicode<span class="token operator">=</span><span class="token boolean">true</span><span class="token operator">&amp;</span>characterEncoding<span class="token operator">=</span>utf8<span class="token operator">&amp;</span>useSSL<span class="token operator">=</span><span class="token boolean">true</span>
+
+查看数据库列表
 <span class="token keyword">show</span> <span class="token keyword">databases</span><span class="token punctuation">;</span>
 查看表列表
 <span class="token keyword">show</span> <span class="token keyword">tables</span><span class="token punctuation">;</span>
@@ -650,10 +653,33 @@ $$
 调用存储过程
 <span class="token keyword">call</span> pro_select<span class="token punctuation">(</span>v_id的值<span class="token punctuation">)</span><span class="token punctuation">;</span>
 删掉存储过程
-<span class="token keyword">drop</span> <span class="token keyword">procedure</span> pro_select<span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token keyword">drop</span> <span class="token keyword">procedure</span> pro_select<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="hexo常用命令"><a href="#hexo常用命令" class="headerlink" title="hexo常用命令"></a>hexo常用命令</h3><pre class="line-numbers language-git" data-language="git"><code class="language-git">清理 hexo clean &amp;&amp; 生成 hexo g &amp;&amp; 本地运行 hexo s 	// 一定要先 clean，防止灵异事件发生
 
+编写md文档地址 http://localhost:[端口号]/admin/
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h3 id="hive常用命令"><a href="#hive常用命令" class="headerlink" title="hive常用命令"></a>hive常用命令</h3><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">查看hive建表语句：<span class="token keyword">show</span> <span class="token keyword">create</span> <span class="token keyword">table</span> tablename<span class="token punctuation">;</span> 				
 
+查看hive表结构：<span class="token keyword">describe</span> tablename<span class="token punctuation">;</span> 			简写：<span class="token keyword">desc</span> tablename<span class="token punctuation">;</span>
+
+删除hive表    <span class="token keyword">drop</span> <span class="token keyword">table</span> <span class="token keyword">if</span> <span class="token keyword">exists</span> bbksale_origin<span class="token punctuation">.</span>t_children<span class="token punctuation">;</span>
+
+查看hive表字段  <span class="token keyword">desc</span> formatted
+
+查看所有表
+<span class="token keyword">use</span> bbksale_origin<span class="token punctuation">;</span>
+<span class="token keyword">show</span> <span class="token keyword">tables</span><span class="token punctuation">;</span>
+
+修改hive字段数据类型
+<span class="token keyword">Alter</span> <span class="token keyword">table</span> 表名 change <span class="token keyword">column</span> 原字段名称  现字段名称 数据类型
+
+新增字段
+<span class="token keyword">alter</span> <span class="token keyword">table</span> 表名 <span class="token keyword">add</span> <span class="token keyword">columns</span><span class="token punctuation">(</span>字段名 数据类型<span class="token punctuation">)</span>
+
+比较两表差异
+<span class="token keyword">SELECT</span> trim<span class="token punctuation">(</span>sn<span class="token punctuation">)</span> <span class="token keyword">as</span> sn <span class="token keyword">FROM</span> bbksale_origin<span class="token punctuation">.</span>t_imeiinfo_make_all_bak
+<span class="token keyword">EXCEPT</span>
+<span class="token keyword">SELECT</span> sn <span class="token keyword">FROM</span>  bbksale_origin<span class="token punctuation">.</span>t_imeiinfo_make_all <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
                 
             </div>
             <hr/>
@@ -1509,7 +1535,7 @@ new Valine({
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2022</span>
+                <span id="year">2022-2023</span>
             
             <span id="year">2022</span>
             <a href="/about" target="_blank">lzw</a>
@@ -1518,7 +1544,7 @@ new Valine({
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">7.3k</span>&nbsp;字
+                class="white-color">5.2k</span>&nbsp;字
             
             
             
