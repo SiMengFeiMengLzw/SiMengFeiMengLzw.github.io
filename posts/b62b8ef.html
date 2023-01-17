@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="hexo隐藏文章, lzw java">
+    <meta name="keywords" content="hexo加密、隐藏文章, lzw java">
     <meta name="description" content="大专 | 软件技术 ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>hexo隐藏文章 | lzw</title>
+    <title>hexo加密、隐藏文章 | lzw</title>
 
     <link rel="icon" type="image/jpeg" href="https://s1.ax1x.com/2020/05/17/YR20js.jpg">
 
@@ -425,12 +425,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://raw.githubusercontent.com/SiMengFeiMengLzw/img/master/posts/20200928015642.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://raw.githubusercontent.com/SiMengFeiMengLzw/img/master/posts/20200928020832.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">hexo隐藏文章</h1>
+                    <h1 class="description center-align post-title">hexo加密、隐藏文章</h1>
                 </div>
             </div>
         </div>
@@ -590,7 +590,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    11
+                    247
                 </div>
                 
 
@@ -615,9 +615,32 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><img src="https://img-blog.csdnimg.cn/ade42aed03634ed095956fcf1e16cb3b.png" alt="img"></p>
-<h3 id="站点目录"><a href="#站点目录" class="headerlink" title="站点目录"></a>站点目录</h3><p><img src="https://raw.githubusercontent.com/SiMengFeiMengLzw/imgbed/master/img/image-20230117171328594.png" alt="image-20230117171328594"></p>
-<h3 id="文章目录"><a href="#文章目录" class="headerlink" title="文章目录"></a>文章目录</h3><p>F:*\MyBlog\source_posts</p>
+                <h4 id="加密文章-建议"><a href="#加密文章-建议" class="headerlink" title="加密文章(建议)"></a>加密文章(建议)</h4><pre class="line-numbers language-none"><code class="language-none">下载插件 (插件文档https://mhexo.github.io/)
+npm install --save hexo-blog-encrypt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>快速使用：文章配置里面添加</p>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">---
+title: Hello World
+date: 2020-12-18 20:44:18
+password: (填写你想设置的密码)
+---
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>按标签设置密码:<br>在博客根目录下的<code>_config.xml</code>中添加:</p>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">encrypt: # hexo-blog-encrypt
+  abstract: 这里有东西被加密了，需要输入密码查看哦。
+  message: 您好, 这里需要密码.
+  tags:
+  - {name: tagName, password: 密码A}
+  - {name: tagName, password: 密码B}
+  template: <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>hexo-blog-encrypt<span class="token punctuation">"</span></span> <span class="token attr-name">data-wpm</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>{{hbeWrongPassMessage}}<span class="token punctuation">"</span></span> <span class="token attr-name">data-whm</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>{{hbeWrongHashMessage}}<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>hbe-input-container<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>password<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>hbePass<span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>{{hbeMessage}}<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span><span class="token punctuation">&gt;</span></span>{{hbeMessage}}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>bottom-line<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>hbeData<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>hbeData<span class="token punctuation">"</span></span> <span class="token attr-name">data-hmacdigest</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>{{hbeHmacDigest}}<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript"><span class="token punctuation">{</span><span class="token punctuation">{</span>hbeEncryptedData<span class="token punctuation">}</span><span class="token punctuation">}</span></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  wrong_pass_message: 抱歉, 这个密码看着不太对, 请再试试.
+  wrong_hash_message: 抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+
+<h4 id="隐藏文章-不建议"><a href="#隐藏文章-不建议" class="headerlink" title="隐藏文章(不建议)"></a>隐藏文章(不建议)</h4><p><img src="https://img-blog.csdnimg.cn/ade42aed03634ed095956fcf1e16cb3b.png" alt="img"></p>
+<h4 id="站点目录"><a href="#站点目录" class="headerlink" title="站点目录"></a>站点目录</h4><p><img src="https://raw.githubusercontent.com/SiMengFeiMengLzw/imgbed/master/img/image-20230117171328594.png" alt="image-20230117171328594"></p>
+<h4 id="文章目录"><a href="#文章目录" class="headerlink" title="文章目录"></a>文章目录</h4><p>F:*\MyBlog\source_posts</p>
 
                 
             </div>
@@ -1164,9 +1187,9 @@ new Valine({
                     <div class="card-image">
                         
                         
-                        <img src="https://raw.githubusercontent.com/SiMengFeiMengLzw/img/master/posts/20200928015642.jpg" class="responsive-img" alt="hexo隐藏文章">
+                        <img src="https://raw.githubusercontent.com/SiMengFeiMengLzw/img/master/posts/20200928020832.jpg" class="responsive-img" alt="hexo加密、隐藏文章">
                         
-                        <span class="card-title">hexo隐藏文章</span>
+                        <span class="card-title">hexo加密、隐藏文章</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1485,7 +1508,7 @@ new Valine({
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">4k</span>&nbsp;字
+                class="white-color">4.2k</span>&nbsp;字
             
             
             
