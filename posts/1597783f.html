@@ -40,7 +40,7 @@
       s.parentNode.insertBefore(hm, s);
     })();
     </script>
-<meta name="generator" content="Hexo 5.2.0">
+<meta name="generator" content="Hexo 5.4.2">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="lzw" type="application/atom+xml">
 </head>
@@ -616,7 +616,7 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="springboot集成mybatis"><a href="#springboot集成mybatis" class="headerlink" title="springboot集成mybatis"></a>springboot集成mybatis</h1><h2 id="项目目录"><a href="#项目目录" class="headerlink" title="项目目录"></a>项目目录</h2><p><a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/SiMengFeiMengLzw/drawing/master/img/image-20220402192629325.png">https://raw.githubusercontent.com/SiMengFeiMengLzw/drawing/master/img/image-20220402192629325.png</a></p>
-<h2 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h2><h3 id="pom-xml文件"><a href="#pom-xml文件" class="headerlink" title="pom.xml文件"></a>pom.xml文件</h3><pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"><span class="token comment">&lt;!--mybatis依赖--&gt;</span>
+<h2 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h2><h3 id="pom-xml文件"><a href="#pom-xml文件" class="headerlink" title="pom.xml文件"></a>pom.xml文件</h3><pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token comment">&lt;!--mybatis依赖--&gt;</span>
         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>org.mybatis<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>mybatis<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
@@ -649,13 +649,13 @@
         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h3 id="application-properties"><a href="#application-properties" class="headerlink" title="application.properties"></a>application.properties</h3><pre class="line-numbers language-properties" data-language="properties"><code class="language-properties"><span class="token comment"># 应用名称</span>
-<span class="token attr-name">spring.application.name</span><span class="token punctuation">=</span><span class="token attr-value">demo</span>
+<span class="token key attr-name">spring.application.name</span><span class="token punctuation">=</span><span class="token value attr-value">demo</span>
 <span class="token comment"># 应用服务 WEB 访问端口</span>
-<span class="token attr-name">server.port</span><span class="token punctuation">=</span><span class="token attr-value">8888</span>
+<span class="token key attr-name">server.port</span><span class="token punctuation">=</span><span class="token value attr-value">8888</span>
 <span class="token comment">#druid数据库连接池</span>
-<span class="token attr-name">type</span><span class="token punctuation">=</span><span class="token attr-value">com.alibaba.druid.pool.DruidDataSource</span>
+<span class="token key attr-name">type</span><span class="token punctuation">=</span><span class="token value attr-value">com.alibaba.druid.pool.DruidDataSource</span>
 <span class="token comment">#配置mapper</span>
-<span class="token attr-name">mybatis.mapper-locations</span><span class="token punctuation">=</span><span class="token attr-value">classpath:mapper/*.xml</span>
+<span class="token key attr-name">mybatis.mapper-locations</span><span class="token punctuation">=</span><span class="token value attr-value">classpath:mapper/*.xml</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h3 id="application-yml"><a href="#application-yml" class="headerlink" title="application.yml"></a>application.yml</h3><pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">spring</span><span class="token punctuation">:</span>
@@ -673,7 +673,7 @@
   <span class="token key atrule">level</span><span class="token punctuation">:</span>
     <span class="token key atrule">com.lzw.mybatis.demo.mapper</span><span class="token punctuation">:</span> debug<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="mapper-xml"><a href="#mapper-xml" class="headerlink" title="mapper.xml"></a>mapper.xml</h3><pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"><span class="token prolog">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;</span>
+<h3 id="mapper-xml"><a href="#mapper-xml" class="headerlink" title="mapper.xml"></a>mapper.xml</h3><pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token prolog">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;</span>
 <span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">mapper</span>
         <span class="token name">PUBLIC</span> <span class="token string">"-//mybatis.org//DTD Mapper 3.0//EN"</span>
         <span class="token string">"http://mybatis.org/dtd/mybatis-3-mapper.dtd"</span><span class="token punctuation">&gt;</span></span>
@@ -685,9 +685,9 @@
 
 <h3 id="TestUserMapper"><a href="#TestUserMapper" class="headerlink" title="TestUserMapper"></a>TestUserMapper</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>lzw<span class="token punctuation">.</span>mybatis<span class="token punctuation">.</span>demo<span class="token punctuation">.</span>mapper</span><span class="token punctuation">;</span>
 
-<span class="token keyword">import</span> <span class="token namespace">com<span class="token punctuation">.</span>lzw<span class="token punctuation">.</span>mybatis<span class="token punctuation">.</span>demo<span class="token punctuation">.</span>pojo<span class="token punctuation">.</span></span><span class="token class-name">TestUser</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>apache<span class="token punctuation">.</span>ibatis<span class="token punctuation">.</span>annotations<span class="token punctuation">.</span></span><span class="token class-name">Mapper</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">List</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">com<span class="token punctuation">.</span>lzw<span class="token punctuation">.</span>mybatis<span class="token punctuation">.</span>demo<span class="token punctuation">.</span>pojo<span class="token punctuation">.</span></span><span class="token class-name">TestUser</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>apache<span class="token punctuation">.</span>ibatis<span class="token punctuation">.</span>annotations<span class="token punctuation">.</span></span><span class="token class-name">Mapper</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">List</span></span><span class="token punctuation">;</span>
 
 <span class="token annotation punctuation">@Mapper</span>
 <span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">TestUserMapper</span> <span class="token punctuation">{</span>
@@ -697,8 +697,8 @@
 
 <h3 id="TestUser"><a href="#TestUser" class="headerlink" title="TestUser"></a>TestUser</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>lzw<span class="token punctuation">.</span>mybatis<span class="token punctuation">.</span>demo<span class="token punctuation">.</span>pojo</span><span class="token punctuation">;</span>
 
-<span class="token keyword">import</span> <span class="token namespace">lombok<span class="token punctuation">.</span></span><span class="token class-name">Data</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>sql<span class="token punctuation">.</span></span><span class="token class-name">Date</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">lombok<span class="token punctuation">.</span></span><span class="token class-name">Data</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>sql<span class="token punctuation">.</span></span><span class="token class-name">Date</span></span><span class="token punctuation">;</span>
 <span class="token annotation punctuation">@Data</span>
 <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TestUser</span> <span class="token punctuation">{</span>
   <span class="token keyword">private</span> <span class="token class-name">Long</span> id<span class="token punctuation">;</span>
@@ -1587,7 +1587,7 @@ new Valine({
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">4.8k</span>&nbsp;字
+                class="white-color">4.7k</span>&nbsp;字
             
             
             
